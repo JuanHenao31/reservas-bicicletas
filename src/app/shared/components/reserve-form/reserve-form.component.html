@@ -1,0 +1,61 @@
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h3>titulo
+                        <!-- <div *ngIf="loading" class="spinner-border float-right" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div> -->
+                    </h3>
+                    <!-- <span *ngIf="submitted && createReserve.invalid" class="badge badge-danger">TODOS LOS CAMPOS SON
+                        OBLIGATORIOS</span> -->
+                    
+                    <!-- <app-qr-code-reader   (returnedData) = recibirDataQR($event)   ></app-qr-code-reader> -->
+
+                    <form class="mt-4" [formGroup] ="editReserveForm"  (ngSubmit)="onSave()">
+
+                        <input type="text" class="form-control form-control-lg mt-3" formControlName="client"
+                            placeholder="Nombre del Cliente">
+                            
+                        <input type="text" class="form-control form-control-lg mt-3" formControlName="idBikes"
+                            placeholder="Vehiculos">
+                    
+                        <input type="text" class="form-control form-control-lg mt-3" formControlName="valuePerHour"
+                            placeholder="Valor por hora">
+                    
+                        <input type="text" class="form-control form-control-lg mt-3" formControlName="documentNumber"
+                            placeholder="N° Documento">
+                    
+                            <input type="text" class="form-control form-control-lg mt-3" formControlName="departureTime"
+                            placeholder="Hora Salida">
+                    
+                            <input type="text" class="form-control form-control-lg mt-3" formControlName="arriveTime"
+                            placeholder="Hora llegada">
+                    
+                            <input type="text" class="form-control form-control-lg mt-3" formControlName="totalValue"
+                            placeholder="Valor Total">
+                    
+                            <input type="text" class="form-control form-control-lg mt-3" formControlName="commision"
+                            placeholder="Comision">
+                    
+                            <input type="text" class="form-control form-control-lg mt-3" formControlName="finalValue"
+                            placeholder="Valor Final">                           
+                        
+                    
+                        <div class="mt-3">
+                            <button type="text" class="btn btn-secondary btn-lg mr-3"
+                                routerLink="/list-reserves">Volver</button>
+                            <button type="submit" class="btn btn-dark btn-lg" >Agregar</button>
+                    
+                        </div>
+                    </form>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

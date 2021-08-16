@@ -1,0 +1,51 @@
+<p>reserve-list works!</p>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Vehiculos</th>
+        <th scope="col">Valor por hora</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">N° Documento</th>
+        <th scope="col">Hora Salida</th>
+        <th scope="col">Hora llegada</th>
+        <th scope="col">Total Horas</th>
+        <th scope="col">Valor Total</th>
+        <th scope="col">Comision</th>
+        <th scope="col">Valor Final</th>
+
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let item of reserves$ | async">
+        <th scope="row">1</th>
+        <td>{{item.idBikes}}</td>
+        <td>{{item.valuePerHour}}</td>
+
+        <td>{{item.client}}</td>
+
+        <td>{{item.documentNumber}}</td>
+        <td>{{item.departureTime}}</td>
+        <td>{{item.arriveTime}}</td>
+        <td>{{item.totalTime}}</td>
+
+        
+        <td>{{item.totalValue}}</td>
+        <td>{{item.commision}}</td>
+        <td>{{item.finalValue}}</td>
+
+
+        <td class="bnt-group d-none d-sm-block" role="group">
+          <button type="button" class="btn btn-outline-warning m-1" [routerLink]="['/reserve-edit/', item]">Edit</button>
+          <button type="button" class="btn btn-outline-warning m-1" [routerLink]="['/reserve-details/', item]">See</button>
+          <button type="button" class="btn btn-outline-danger m-1" (click)="onGoToDelete(item.id)">Delete</button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</div>

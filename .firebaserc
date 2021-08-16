@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "bici-app-c407d": {
+      "hosting": {
+        "reservas-bicicletas": [
+          "bici-app-c407d"
+        ]
+      }
+    }
+  }
+}
